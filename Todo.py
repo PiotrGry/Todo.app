@@ -6,7 +6,7 @@ class TodoItems:
     name = ""
     description = ""
     task_day = time.strftime("%-d/%-m")
-    is_done = False
+    is_done = True
 
     def __init__(self, name, description):
         self.name = name
@@ -18,27 +18,13 @@ class TodoItems:
     def unmark(self):
             self.is_done = False
 
-    # def exporting_data(self,filename = "task_data.txt"):
-    #     with open ("task_data.txt","w") as f_name:
-    #         tasks = []
-    #         for ele in f_name:
-    #             tasks.append(ele)
 
-
-    def add_Todo(self, name, description):
-        pass
 
     def __str__(self):
-        is_done_sign = "o"
+        is_done_sign = "o "
         if self.is_done:
-            is_done_sign = "✓"
-        task_number += 1
-
-
-        return str(task_day)+"/" + str(task_number) + " Id: "+str(id_sign) +" | Title: "+ str(self.name)+" | Description: "+ str(self.description)
-
-
-task_1 = TodoItems("pepik", "mam do zorobienia kupe")
-task_2 = TodoItems("Pieszczoch", "Znajdź se mózg")
-print(task_1)
-print(task_2)
+            is_done_sign = "✓ "
+        task_number = 0
+        id_sign = str(self.task_day)+"/" + str(task_number)
+        return  is_done_sign + "Id: " + id_sign + str(self.task_day)+"/" + str(task_number)\
+                + " | Title: "+ str(self.name)+" | Description: "+ str(self.description)
