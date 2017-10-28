@@ -9,6 +9,7 @@ class TodoItems:
     is_done = False
     names = None
     task_number = 0
+    id_sign = str(task_day)+"/" + str(task_number)
 
     def __init__(self, name, description):
         self.name = name
@@ -18,7 +19,7 @@ class TodoItems:
         TodoItems.task_number +=1
         self.id_sign = str(self.task_day)+"/" + str(TodoItems.task_number)
 
-    
+
     def mark(self):
             self.is_done = True
 
