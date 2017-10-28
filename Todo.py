@@ -2,7 +2,7 @@ import datetime
 import time
 
 
-class TodoItems:
+class Todo:
     name = ""
     description = ""
     task_day = time.strftime("%-d/%-m")
@@ -15,9 +15,9 @@ class TodoItems:
         self.name = name
         self.description = description
         self.names = []
-        self.names.append(TodoItems.name)
-        TodoItems.task_number +=1
-        self.id_sign = str(self.task_day)+"/" + str(TodoItems.task_number)
+        self.names.append(Todo.name)
+        Todo.task_number +=1
+        self.id_sign = str(self.task_day)+"/" + str(Todo.task_number)
 
 
     def mark(self):
@@ -33,8 +33,8 @@ class TodoItems:
         if self.is_done:
             is_done_sign = "✓ "
         return is_done_sign + "Id: " + str(self.id_sign) \
-                + " | Title: "+ str(self.name)+" | Description: "+ str(self.description)
+                + " | Title: ~~"+ str(self.name) + "~~ |Description: "+ str(self.description)
 
 
-# task_1 = TodoItems("Pepik", "umyj dupe")
+# task_1 = Todo("Pepik", "umyj dupe")
 # print(task_1)

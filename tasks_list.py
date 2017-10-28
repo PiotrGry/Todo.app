@@ -1,4 +1,4 @@
-from Todo import TodoItems
+from Todo import Todo
 
 class Tasks:
     tasks = None
@@ -8,25 +8,26 @@ class Tasks:
 
 
     def add_item(self, name, description):
-        quest = TodoItems(name, description)
+        quest = Todo(name, description)
         self.tasks.append(quest)
 
-    def remove_item(self, id_sign ):
-
-        self.tasks.pop(id_sign)
+    def remove_item(self, index):
+        index -= 1
+        self.tasks.pop(index)
 
     def modify_name(self, id_sign):
-        for id_sign in self.tasks:
-            if id_sign == TodoItems.id_sign:
-                self.name = input("What should be a new name of quest: ")
-                return self.name
+        for quest in self.tasks:
+            if id_sign == quest.id_sign:
+                quest.name = input("What should be a new name of quest: ")
+                return quest.name
         else:
             print("error")
+
     def modify_description(self, id_sign):
-        for id_sign in self.tasks:
-            if id_sign == TodoItems.id_sign:
-                TodoItems.description = input("What should be a new description of a quest: ")
-                return TodoItems.description
+        for quest in self.tasks:
+            if id_sign == quest.id_sign:
+                quest.description = input("What should be a new description of a quest: ")
+                return quest.description
 
     def display_ids(self):
         ids = []
@@ -42,6 +43,8 @@ class Tasks:
 
     def __str__(self):
         formatted_list = []
+        index = 1
         for quest in self.tasks:
-            formatted_list.append(str(quest)+"\n")
+            formatted_list.append(str(index) + ". " + str(quest)+"\n")
+            index += 1
         return "".join(formatted_list)
