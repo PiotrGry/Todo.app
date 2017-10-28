@@ -6,12 +6,19 @@ class TodoItems:
     name = ""
     description = ""
     task_day = time.strftime("%-d/%-m")
-    is_done = True
+    is_done = False
+    names = None
+    task_number = 0
 
     def __init__(self, name, description):
         self.name = name
         self.description = description
+        self.names = []
+        self.names.append(TodoItems.name)
+        TodoItems.task_number +=1
+        self.id_sign = str(self.task_day)+"/" + str(TodoItems.task_number)
 
+    
     def mark(self):
             self.is_done = True
 
@@ -24,7 +31,9 @@ class TodoItems:
         is_done_sign = "o "
         if self.is_done:
             is_done_sign = "✓ "
-        task_number = 0
-        id_sign = str(self.task_day)+"/" + str(task_number)
-        return  is_done_sign + "Id: " + id_sign + str(self.task_day)+"/" + str(task_number)\
+        return is_done_sign + "Id: " + str(self.id_sign) \
                 + " | Title: "+ str(self.name)+" | Description: "+ str(self.description)
+
+
+# task_1 = TodoItems("Pepik", "umyj dupe")
+# print(task_1)

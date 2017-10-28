@@ -1,3 +1,5 @@
+from Todo import TodoItems
+
 class Tasks:
     tasks = None
 
@@ -5,17 +7,9 @@ class Tasks:
         self.tasks = []
 
 
-    def sort_items(self):
-        """ Sorts a todo_items list decreasing by deadline attribute """
-        self.tasks.sort(key=lambda task: tasks.task_day)
-
-    def add_item(self, title, description):
-        """ Append TodoItem object to todo_items sorted decrasing by deadline
-        Raises TypeError if an argument deadline is not an instance of Datetime class."""
-
-        task = TodoItem(name, description)
-        self.tasks.append(task)
-        self.sort_items()
+    def add_item(self, name, description):
+        quest = TodoItems(name, description)
+        self.tasks.append(quest)
 
     def remove_item(self, index):
 
@@ -30,25 +24,33 @@ class Tasks:
             raise IndexError("Argument index is out of range list todo_items")
 
     def modify_name(self, id_sign):
-        for id_sign in tasks:
-            if id_sign:
-                self.name = input("What should be a new name of task: ")
-        return self.name
-
-
+        for id_sign in self.tasks:
+            if id_sign == self.id_sign:
+                self.name = input("What should be a new name of quest: ")
+                return self.name
 
     def modify_description(self, id_sign):
-        for id_sign in tasks:
-            if id_sign:
-                self.description = input("What should be a new description of a task: ")
-        return self.description
+        for id_sign in self.tasks:
+            if id_sign :
+                TodoItems.description = input("What should be a new description of a quest: ")
+                return TodoItems.description
 
     def display_ids(self):
-        id_sign_index = 2
-        for quest in tasks:
-            return quest[id_sign_index]
+        ids = []
+        for quest in self.tasks:
+            ids.append(quest.id_sign)
+        return ids
 
-    def display_task_name(self):
-        task_neme_index = 4
-        for quest in tasks:
-            return quest[task_neme_index]
+    def display_task_names(self):
+        names = []
+        for quest in self.tasks:
+            names.append(quest.name)
+        return names
+
+
+    def __str__(self):
+        """Returns a formatted list of todo_items sorted decrasing by deadline."""
+        formatted_list = []
+        for quest in self.tasks:
+            formatted_list.append(str(quest)+"\n")
+        return "".join(formatted_list)
