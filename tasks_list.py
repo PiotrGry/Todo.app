@@ -1,4 +1,6 @@
+import csv
 from Todo import Todo
+
 
 class Tasks:
     tasks = None
@@ -41,6 +43,25 @@ class Tasks:
             names.append(quest.name)
         return names
 
+    def save_data_to_file(self, file_name):
+        with open(file_name, "w", newline="") as import_file:
+            file_writer = csv.writer(import_file, delimiter=" ")
+            for quest in self.tasks:
+            # file_writer.writerow(self.tasks)
+
+                file_writer.writerow(str(quest))
+
+
+
+
+    def add_items_from_file(self, file_name):
+            with open(file_name) as import_file:
+                file_reader = csv.reader(import_file, delimiter="|")
+                tasks = []
+                for item in file_reader:
+                    tasks.append(item)
+
+            
     def __str__(self):
         formatted_list = []
         index = 1

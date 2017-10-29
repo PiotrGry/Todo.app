@@ -29,12 +29,12 @@ class Todo:
 
 
     def __str__(self):
-        is_done_sign = "o "
+        is_done_sign = "o"
         if self.is_done:
             is_done_sign = "✓ "
-        return is_done_sign + "Id: " + str(self.id_sign) \
-                + " | Title: ~~"+ str(self.name) + "~~ |Description: "+ str(self.description)
-
+        return is_done_sign + "Id:" + str(self.id_sign) \
+                + "|Title:"+ str(self.name) + "|Description:"+ str(self.description)
+        # return "{} Id {}
 
 # task_1 = Todo("Pepik", "umyj dupe")
 # print(task_1)
