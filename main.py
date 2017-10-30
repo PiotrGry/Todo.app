@@ -1,7 +1,7 @@
 import os
 import time
 import sys
-from  import Todo
+from Todo import Todo
 from Todo_logic import Tasks
 
 def print_ui():
