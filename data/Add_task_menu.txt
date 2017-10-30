@@ -1,0 +1,6 @@
+	Add task menu
+
+NOTICE : Name and description of the task must be shorter than, 
+	 respectively 20 and 150 characters.
+	 
+	 

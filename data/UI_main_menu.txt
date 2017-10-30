@@ -1,0 +1,8 @@
+	ToDo app menu 
+1. Add task
+2. Marks done tasks
+3. Modify task name or description
+4. Display info about tasks
+5. Delete tasks
+6. Load tasks from file
+7. Save & Quit

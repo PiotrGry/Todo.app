@@ -1,0 +1,6 @@
+
+	Display daily tasks:
+1. Details
+2. Ids 
+3. Names
+4. Back to Main Menu
