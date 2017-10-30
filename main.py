@@ -104,7 +104,7 @@ respectively 20 and 150 characters.""")
 
 
         if user_pick == "6":
-            action = input("""do you want to load tasks from new file? If no, tasks
+            action = input("""do you want to load tasks from another file? If no, tasks
 will be loaded from dedault file [Y/N]: """)
             if action.upper() == "N":
                 daily_dutes.add_task_from_file()
@@ -123,6 +123,5 @@ will be saved in dedault file [Y/N]: """)
                 daily_dutes.save_data_to_file(file_name)
             sys.exit()
 
-
-
-main()
+if __name__ == "__main__":
+    main()
