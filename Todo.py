@@ -1,7 +1,6 @@
 import datetime
 import time
 
-
 class Todo:
     name = ""
     description = ""
@@ -19,22 +18,15 @@ class Todo:
         Todo.task_number +=1
         self.id_sign = str(self.task_day)+"/" + str(Todo.task_number)
 
-
     def mark(self):
             self.is_done = True
 
     def unmark(self):
             self.is_done = False
 
-
-
     def __str__(self):
-        is_done_sign = "o"
+        is_done_sign = "x "
         if self.is_done:
             is_done_sign = "✓ "
-        return is_done_sign + "Id:" + str(self.id_sign) \
-                + "|Title:"+ str(self.name) + "|Description:"+ str(self.description)
-        # return "{} Id {}
-
-# task_1 = Todo("Pepik", "umyj dupe")
-# print(task_1)
+        return is_done_sign + "| Id: " + str(self.id_sign) \
+                + " |Title: "+ str(self.name) + " |Description: "+ str(self.description)
